@@ -66,7 +66,7 @@
                 <h4 class="card-title">Array</h4>
                 <p class="card-text">
                     <?php
-                        $arrayExample = array(1, 2, 3, 4, 5);
+                        $arrayExample = array(3);
                         echo "Example: ";
                         print_r($arrayExample);
                     ?>
