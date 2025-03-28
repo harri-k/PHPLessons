@@ -39,7 +39,7 @@
             <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
         </div>
     </div>
-
+    <h1><a link href="datatypes.php">Data Types</a></h1
     <footer class="bg-light text-center py-3 mt-5">
         <p>&copy; <?php echo date("Y"); ?> My Website. All rights reserved.</p>
     </footer>
