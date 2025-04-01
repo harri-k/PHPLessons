@@ -27,35 +27,34 @@
         <h1 class="text-center my-4">PHP Calendar</h1>
         <div class="calendar border p-3">
             <?php
-                $month = date('m');
+                $month = date('n');
                 $year = date('Y');
                 $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
-                $firstDayOfMonth = date('w', strtotime("$year-$month-01"));
+                $firstDayOfMonth = date('N', strtotime("$year-$month-01"));
                 $currentDay = date('j');
                 
                 echo "<h3 class='text-center'>" . date('F Y') . "</h3>";
                 echo "<table class='table table-bordered text-center'>";
-                echo "<tr class='bg-primary text-white'><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>";
+                echo "<tr class='bg-primary text-white'><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>";
                 echo "<tr>";
 
-                for ($i = 0; $i < $firstDayOfMonth; $i++) {
+                for ($i = 1; $i < $firstDayOfMonth; $i++) {
                     echo "<td></td>";
                 }
 
-                for ($day = 1; $day <= $daysInMonth; $day++) {
-                    if (($i % 7) == 0) {
-                        echo "</tr><tr>";
-                    }
+                for ($day = 1; $day <= $daysInMonth; $day++, $i++) {
                     $class = ($day == $currentDay) ? "current-day" : "";
                     echo "<td class='day $class'>$day</td>";
+                    if ($i % 7 == 0) {
+                        echo "</tr><tr>";
+                    }
+                }
+                
+                while ($i % 7 != 1) {
+                    echo "<td></td>";
                     $i++;
                 }
                 
-                while ($i % 7 != 0) {
-                    echo "<td></td>";
-                    $i++;
-                }
-
                 echo "</tr></table>";
             ?>
         </div>
