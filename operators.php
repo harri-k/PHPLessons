@@ -5,11 +5,11 @@ $b = 3;
 $addition = $a + $b;
 $subtraction = $a - $b;
 $multiplication = $a * $b;
-$division = $a / $b;
+$division = number_format($a / $b, 2); // Rounded to 2 decimal places
 
 // Assignment operators
 $c = 10;
-$c += 5; // equivalent to $c = $c + 5
+$c += 5; // Equivalent to $c = $c + 5
 
 // Comparison operators
 $d = 5;
@@ -21,7 +21,7 @@ $less_than = $d < $e;
 
 // Increment operators
 $f = 5;
-$f++; // equivalent to $f = $f + 1
+$f++; // Equivalent to $f = $f + 1
 
 // Logical operators
 $g = true;
@@ -37,44 +37,80 @@ $not = !$g;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Operators</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container mt-5">
-        <h1>PHP Operators</h1>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="calculator.php">My Calculator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="calendar.php">Calendar</a></li>
+                <li class="nav-item"><a class="nav-link active" href="operators.php">Operators</a></li>
+                <li class="nav-item"><a class="nav-link" href="conditionals.php">Conditionals</a></li>
+                <li class="nav-item"><a class="nav-link" href="datatypes.php">Data Types</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">PHP Operators</h1>
+
+    <div class="card p-4 mb-4">
         <h2>Arithmetic Operators</h2>
-        <p>Example: $a = 5, $b = 3</p>
+        <p>Example: <code>$a = 5</code>, <code>$b = 3</code></p>
         <ul>
-            <li>Addition: $a + $b = <?php echo $addition; ?></li>
-            <li>Subtraction: $a - $b = <?php echo $subtraction; ?></li>
-            <li>Multiplication: $a * $b = <?php echo $multiplication; ?></li>
-            <li>Division: $a / $b = <?php echo $division; ?></li>
-        </ul>
-
-        <h2>Assignment Operators</h2>
-        <p>Example: $c = 10, $c += 5</p>
-        <p>$c = <?php echo $c; ?></p>
-
-        <h2>Comparison Operators</h2>
-        <p>Example: $d = 5, $e = 3</p>
-        <ul>
-            <li>Equal: $d == $e = <?php echo var_export($equal, true); ?></li>
-            <li>Not Equal: $d != $e = <?php echo var_export($not_equal, true); ?></li>
-            <li>Greater Than: $d > $e = <?php echo var_export($greater_than, true); ?></li>
-            <li>Less Than: $d < $e = <?php echo var_export($less_than, true); ?></li>
-        </ul>
-
-        <h2>Increment Operators</h2>
-        <p>Example: $f = 5, $f++</p>
-        <p>$f = <?php echo $f; ?></p>
-
-        <h2>Logical Operators</h2>
-        <p>Example: $g = true, $h = false</p>
-        <ul>
-            <li>And: $g && $h = <?php echo var_export($and, true); ?></li>
-            <li>Or: $g || $h = <?php echo var_export($or, true); ?></li>
-            <li>Not: !$g = <?php echo var_export($not, true); ?></li>
+            <li>Addition: <code>$a + $b</code> = <strong><?php echo $addition; ?></strong></li>
+            <li>Subtraction: <code>$a - $b</code> = <strong><?php echo $subtraction; ?></strong></li>
+            <li>Multiplication: <code>$a * $b</code> = <strong><?php echo $multiplication; ?></strong></li>
+            <li>Division: <code>$a / $b</code> = <strong><?php echo $division; ?></strong></li>
         </ul>
     </div>
+
+    <div class="card p-4 mb-4">
+        <h2>Assignment Operators</h2>
+        <p>Example: <code>$c = 10</code>, then <code>$c += 5</code></p>
+        <p>Result: <code>$c</code> = <strong><?php echo $c; ?></strong></p>
+    </div>
+
+    <div class="card p-4 mb-4">
+        <h2>Comparison Operators</h2>
+        <p>Example: <code>$d = 5</code>, <code>$e = 3</code></p>
+        <ul>
+            <li>Equal (<code>$d == $e</code>): <strong><?php echo var_export($equal, true); ?></strong></li>
+            <li>Not Equal (<code>$d != $e</code>): <strong><?php echo var_export($not_equal, true); ?></strong></li>
+            <li>Greater Than (<code>$d > $e</code>): <strong><?php echo var_export($greater_than, true); ?></strong></li>
+            <li>Less Than (<code>$d < $e</code>): <strong><?php echo var_export($less_than, true); ?></strong></li>
+        </ul>
+    </div>
+
+    <div class="card p-4 mb-4">
+        <h2>Increment Operators</h2>
+        <p>Example: <code>$f = 5</code>, then <code>$f++</code></p>
+        <p>Result: <code>$f</code> = <strong><?php echo $f; ?></strong></p>
+    </div>
+
+    <div class="card p-4">
+        <h2>Logical Operators</h2>
+        <p>Example: <code>$g = true</code>, <code>$h = false</code></p>
+        <ul>
+            <li>AND (<code>$g && $h</code>): <strong><?php echo var_export($and, true); ?></strong></li>
+            <li>OR (<code>$g || $h</code>): <strong><?php echo var_export($or, true); ?></strong></li>
+            <li>NOT (<code>!$g</code>): <strong><?php echo var_export($not, true); ?></strong></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
