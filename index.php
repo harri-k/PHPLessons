@@ -24,6 +24,7 @@
                 <li class="nav-item"><a class="nav-link" href="operators.php">Operators</a></li>
                 <li class="nav-item"><a class="nav-link" href="conditionals.php">Conditionals</a></li>
                 <li class="nav-item"><a class="nav-link" href="datatypes.php">Data Types</a></li>
+                <li class="nav-item"><a class="nav-link" href="functions.php">Array</a></li>
             </ul>
         </div>
     </div>
